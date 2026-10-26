@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --my-white:#fffffe;
+  --my-black:#272343;
+  --my-gray1:#2d334a;
+  --my-gray2:#272343;
+  --my-yellow:#ffd803;
+  --my-illustration-black:#ffd803;
+  --my-illustration-white:#fffffe;
+  --my-illustration-yellow:#ffd803;
+  --my-illustration-skyblue:#e3f6f5;
+  --my-illustration-blue:#bae8e8;
+  --background: #ffffff;
+  --foreground: #256238;
+}
+
+@theme {
+  --color-white: var(--my-white);
+  --color-black: var(--my-black);
+  --color-sky:var(--my-illustration-skyblue)
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/*@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}*/
+
+@layer components{
+  .btn-base{
+    @apply px-4 py-2 bg-sky text-white rounded-md;
+    @apply hover:brightness-50 active:scale-50 transition-all;
+  }
+
+  .pagenation{
+    @apply flex items-center justify-center
+  }
+
+  .number-box{@apply text-xl font-black text-sky-400 font-mono leading-none}
+  .allow-box{@apply w-10 h-10 flex items-center justify-center text-lg font-black transition-all disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-800 rounded-sm border border-slate-700}
+  .pulldown{
+    @apply flex-1 bg-[#1b2838]/60 text-slate-300 px-4 py-2 rounded-sm outline-none cursor-pointer hover:bg-[#2a475e]/80 transition-all appearance-none border-t-[#4a5568] border-l-[#4a5568] border-b-[#0a0a0a] border-r-[#0a0a0a] border
+  }
+  .time{@apply text-slate-100 text-2xl font-mono leading-none}
+  .timescale{@apply text-xs ml-0.5 mr-2}
+  .custom-scrollbar{
+    scrollbar-width: thin;
+    scrollbar-color: #334155 transparent;
+  }
+}
+
+@layer base{
+body {
+  @apply min-h-screen  bg-linear-to-b from-[#2a475e] via-[#2d1616] to-[#0f1922] text-slate-300 bg-fixed;
+  font-family: Arial, Helvetica, sans-serif;
+}
+}
+
+
